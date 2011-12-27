@@ -1,0 +1,50 @@
+/*custom*/
+
+.leftNav {display: block; position: relative; float: left; left: 10px; width: 190px;}
+
+.blocHome, .blocActu {display: block; float: left; width: 220px;}
+
+.blocActu {height: 400px;}
+
+.sectionActu {display: block; width: 280px;}
+
+.titreArchive {font-weight: bold; font-size: 20px;}
+
+article .page {width: 700px; padding: 0;}
+/*article .singular.page .hentry {padding: 0.5em 0 0;}*/
+
+/***************************************/
+
+/*overwrite*/
+
+/***************************************/
+
+#branding hgroup {margin: 0 0 0 30px;}
+
+#site-title {margin-right: 150px; padding: 0;}
+
+#access {background: none repeat scroll 0 0 transparent; box-shadow: none; clear: both; display: block; height: 150px; left: 500px; margin: 0; overflow: hidden; position: absolute; top: 0; width: 305px; padding: 0;}
+
+#access div {margin: 0;}
+
+.menu-menu-principal-container {height: 150px; width: 305px;}
+
+#access a {color: black; display: block; line-height: 3.333em; padding: 0 0.9em; text-decoration: none;}
+
+#access li {float: left; height: 30px; position: relative; width: 150px;}
+
+#access li:hover > a, #access a:focus {background: silver repeat scroll 0 0; color: #373737;}
+
+#branding img {display: none; height: auto; margin-bottom: -7px; width: 100%;}
+
+#searchform {position: absolute; right: 0; text-align: right; top: 3.8em;}
+
+#primary {float: left; margin: 0; width: 807px;}
+
+.singular.page .hentry {padding: 0;}
+
+.singular .hentry {padding: 0;}
+
+.entry-content {width: 90%;}
+
+#content, .singular #content {margin: 0; padding: 0; position: relative; width: 660px;}

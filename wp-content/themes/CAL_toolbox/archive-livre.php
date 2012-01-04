@@ -12,11 +12,10 @@
      * @since Toolbox 0.1
      */
 
-    get_header(); ?>
+    get_header();
+    CAL_get_leftNav();
+?>
 ARCHIVE-LIVRE.PHP
-<nav class="leftNav">
-    <?php wp_nav_menu(array('theme_location' => 'leftNav-actualites')); ?>
-</nav>
 
 <section id="primary">
     <div id="content" role="main">

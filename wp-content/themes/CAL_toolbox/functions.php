@@ -415,7 +415,7 @@
             if (is_page(array(107, 105))) :
                 wp_nav_menu(array('theme_location' => 'leftNav-prestations'));
             elseif (!is_page()):
-                if (is_category(array(28, 30))):
+                if (is_category(array(28, 30)) || is_post_type_archive('livre', 'lettreInfo')):
                     wp_nav_menu(array('theme_location' => 'leftNav-ressources'));
                 else:
                     wp_nav_menu(array('theme_location' => 'leftNav-actualites'));
@@ -435,7 +435,7 @@
     function CAL_get_sidebar ()
     {
         if (!is_page()): //is_home() || is_category() || is_single() || is_tag()
-            if (is_category(array(28, 30))):
+            if (is_category(array(28, 30)) || is_post_type_archive('livre', 'lettreInfo')):
                 get_sidebar('CALside-6');
             else:
                 get_sidebar('CALside-1');

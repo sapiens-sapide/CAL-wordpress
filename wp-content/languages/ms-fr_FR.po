@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: WordPress 3.3\n"
+"Project-Id-Version: WordPress 3.3.1\n"
 "Report-Msgid-Bugs-To: wp-polyglots@lists.automattic.com\n"
-"POT-Creation-Date: 2011-12-11 00:18:53+00:00\n"
-"PO-Revision-Date: 2011-12-13 21:53+0100\n"
+"POT-Creation-Date: 2012-01-03 21:20:55+00:00\n"
+"PO-Revision-Date: 2012-01-03 23:11+0100\n"
 "Last-Translator: Amaury Balmer <amaury@wordpress-fr.net>\n"
 "Language-Team: WordPress Francophone <traduction@wordpress-fr.net>\n"
 "MIME-Version: 1.0\n"
@@ -988,78 +988,78 @@ msgid "Your email address has not been updated yet. Please check your inbox at %
 msgstr "Votre adresse e-mail n&rsquo;a pas encore été mise à jour. Merci de vérifier votre boite de réception %s pour consulter l&rsquo;e-mail de confirmation."
 
 #. translators: Gigabytes
-#: wp-admin/includes/ms.php:405
+#: wp-admin/includes/ms.php:407
 msgid "GB"
 msgstr "GO"
 
 #. translators: Megabytes
-#: wp-admin/includes/ms.php:408
+#: wp-admin/includes/ms.php:410
 msgid "MB"
 msgstr "MO"
 
-#: wp-admin/includes/ms.php:411
+#: wp-admin/includes/ms.php:413
 msgid "Used: %1s%% of %2s"
 msgstr "Taux d&rsquo;utilisation&nbsp;: %1s%% sur %2s"
 
-#: wp-admin/includes/ms.php:423
+#: wp-admin/includes/ms.php:425
 msgid "Site Upload Space Quota "
 msgstr "Quota de l&rsquo;espace disque du site"
 
-#: wp-admin/includes/ms.php:424
+#: wp-admin/includes/ms.php:426
 msgid "MB (Leave blank for network default)"
 msgstr "MO (Laisser vide pour utiliser la valeur par défaut du réseau)"
 
-#: wp-admin/includes/ms.php:503
 #: wp-admin/includes/ms.php:505
+#: wp-admin/includes/ms.php:507
 msgid "You attempted to access the \"%1$s\" dashboard, but you do not currently have privileges on this site. If you believe you should be able to access the \"%1$s\" dashboard, please contact your network administrator."
 msgstr "Vous avez tenté d&rsquo;accéder au tableau de bord de &laquo;&nbsp;%1$s&nbsp;&raquo;. Cependant, vous ne disposez pas pour le moment des droits nécessaires sur ce site. Si vous pensez que vous devriez pouvoir accéder au tableau de bord de &laquo;&nbsp;%1$s&nbsp;&raquo;, contactez l&rsquo;administrateur du réseau."
 
-#: wp-admin/includes/ms.php:506
+#: wp-admin/includes/ms.php:508
 msgid "If you reached this screen by accident and meant to visit one of your own sites, here are some shortcuts to help you find your way."
 msgstr "Si vous êtes arrivé sur cet écran par accident, et que vous vouliez en fait vous rendre sur l&rsquo;un de vos sites, voici quelques raccourcis pour vous aider à trouver votre chemin."
 
-#: wp-admin/includes/ms.php:508
+#: wp-admin/includes/ms.php:510
 msgid "Your Sites"
 msgstr "Vos sites"
 
-#: wp-admin/includes/ms.php:517
+#: wp-admin/includes/ms.php:519
 msgid "Visit Dashboard"
 msgstr "Se rendre sur le Tableau de bord"
 
-#: wp-admin/includes/ms.php:517
+#: wp-admin/includes/ms.php:519
 msgid "View Site"
 msgstr "Afficher le site"
 
-#: wp-admin/includes/ms.php:544
+#: wp-admin/includes/ms.php:546
 msgid "American English"
 msgstr "Anglais (US)"
 
-#: wp-admin/includes/ms.php:548
+#: wp-admin/includes/ms.php:550
 msgid "British English"
 msgstr "Anglais (UK)"
 
-#: wp-admin/includes/ms.php:558
+#: wp-admin/includes/ms.php:560
 msgid "English"
 msgstr "Anglais"
 
-#: wp-admin/includes/ms.php:578
+#: wp-admin/includes/ms.php:580
 msgid "Warning! WordPress encrypts user cookies, but you must add the following lines to <strong>wp-config.php</strong> for it to be more secure."
 msgstr "Attention&nbsp;! WordPress encrypte les cookies utilisés par les utilisateurs, mais pour que la sécurité soit améliorée vous devez ajouter les lignes suivantes dans le fichier <strong>wp-config.php</strong>."
 
-#: wp-admin/includes/ms.php:579
+#: wp-admin/includes/ms.php:581
 msgid "Before the line <code>/* That's all, stop editing! Happy blogging. */</code> please add this code:"
 msgstr "Merci d&rsquo;ajouter ce code avant la ligne <code>/* C'est tout, ne touchez pas à ce qui suit ! Bon blogging ! */</code> :"
 
-#: wp-admin/includes/ms.php:592
+#: wp-admin/includes/ms.php:594
 msgid "Thank you for Updating! Please visit the <a href=\"%s\">Update Network</a> page to update all your sites."
 msgstr "Merci d&rsquo;avoir fait cette mise à jour&nbsp;!  Rendez-vous sur la page de <a href=\"%s\">mise à jour du réseau</a> afin de mettre tous vos sites à jour."
 
 #. translators: My sites label
-#: wp-admin/includes/ms.php:625
+#: wp-admin/includes/ms.php:627
 msgid "Primary Site"
 msgstr "Site principal"
 
-#: wp-admin/includes/ms.php:672
+#: wp-admin/includes/ms.php:674
 msgid "The <code>%1$s</code> file is deprecated. Please remove it and update your server rewrite rules to use <code>%2$s</code> instead."
 msgstr "Le fichier <code>%1$s</code> est obsolète. Veuillez l&rsquo;enlever et mettre à jour les règles de réécriture de votre serveur, afin d&rsquo;utiliser <code>%2$s</code> à la place."
 
@@ -2226,7 +2226,7 @@ msgstr "utilisateur"
 
 #: wp-signup.php:390
 msgid "Greetings Site Administrator! You are currently allowing &#8220;%s&#8221; registrations. To change or disable registration go to your <a href=\"%s\">Options page</a>."
-msgstr "Bonjour, cher administrateur du site&nbsp;! Vous acceptez actuellement les inscriptions de type &laquo;&nbsp;%s&nbsp;&raquo;. Pour modifier ou désactiver les inscriptions, allez sur votre <a href=\"%s\">page d&rsquo;options</a>."
+msgstr "Salutations, cher administrateur du site&nbsp;! Vous acceptez actuellement les inscriptions de type &laquo;&nbsp;%s&nbsp;&raquo;. Pour modifier ou désactiver les inscriptions, allez sur votre <a href=\"%s\">page d&rsquo;options</a>."
 
 #: wp-signup.php:396
 msgid "Registration has been disabled."
@@ -2833,7 +2833,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgstr "Moteurs de recherche bloqués"
 #~ msgid "Howdy, <a href=\"%1$s\" title=\"Edit your profile\">%2$s</a>"
 #~ msgstr ""
-#~ "Bonjour, <a href=\"%1$s\" title=\"Modifier votre profil\">%2$s</"
+#~ "Salutations, <a href=\"%1$s\" title=\"Modifier votre profil\">%2$s</"
 #~ "a>&nbsp;!"
 #~ msgid "Log Out"
 #~ msgstr "Se déconnecter"
@@ -12842,7 +12842,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Howdy! This importer allows you to import posts and comments from your "
 #~ "Blogger account into your WordPress site."
 #~ msgstr ""
-#~ "Bonjour&nbsp;! Cet outil d&rsquo;import vous permet d&rsquo;importer "
+#~ "Salutations&nbsp;! Cet outil d&rsquo;import vous permet d&rsquo;importer "
 #~ "les articles et les commentaires depuis votre compte Blogger vers votre "
 #~ "site WordPress."
 #~ msgid ""
@@ -12999,7 +12999,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Howdy! This importer allows you to extract posts from Blogware XML export "
 #~ "file into your site. Pick a Blogware file to upload and click Import."
 #~ msgstr ""
-#~ "Bonjour&nbsp;! Cet outil d&rsquo;importation vous permet d&rsquo;"
+#~ "Salutations&nbsp;! Cet outil d&rsquo;importation vous permet d&rsquo;"
 #~ "extraire des articles depuis le fichier d&rsquo;export XML de votre blog "
 #~ "BlogWare dans votre site. Choisissez le fichier à utiliser et cliquez sur "
 #~ "Importer."
@@ -13031,7 +13031,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Howdy! This importer allows you to extract posts from a DotClear database "
 #~ "into your WordPress site.  Mileage may vary."
 #~ msgstr ""
-#~ "Bonjour&nbsp;! Cet outil d&rsquo;importation vous permet d&rsquo;"
+#~ "Salutations&nbsp;! Cet outil d&rsquo;importation vous permet d&rsquo;"
 #~ "extraire les articles d&rsquo;un blog DotClear vers votre nouveau site "
 #~ "WordPress. Attention, la peinture est encore fraîche&hellip;"
 #~ msgid "Your DotClear Configuration settings are as follows:"
@@ -13317,7 +13317,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Howdy! This importer allows you to connect directly to LiveJournal and "
 #~ "download all your entries and comments"
 #~ msgstr ""
-#~ "Bonjour, cet importateur vous permet de vous connecter directement à "
+#~ "Salutations, cet importateur vous permet de vous connecter directement à "
 #~ "LiveJournal et télécharger tous vos articles et commentaires."
 #~ msgid ""
 #~ "Enter your LiveJournal username and password below so we can connect to "
@@ -13520,7 +13520,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "MT export file as <code>mt-export.txt</code> in your <code>/wp-content/</"
 #~ "code> directory and then click &#8220;Import mt-export.txt&#8221;."
 #~ msgstr ""
-#~ "Bonjour&nbsp;! Nous sommes sur le point de procéder à l&rsquo;"
+#~ "Salutations&nbsp;! Nous sommes sur le point de procéder à l&rsquo;"
 #~ "importation de toutes vos entrées Movable Type ou TypePad vers WordPress. "
 #~ "Pour commencer, sélectionnez un fichier à envoyer et cliquez sur &laquo;"
 #~ "&nbsp;Envoyer le fichier et l&rsquo;importer&nbsp;&raquo;. Autre "
@@ -13639,7 +13639,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "from a system that is not handled by a custom import tool. Pick an RSS "
 #~ "file to upload and click Import."
 #~ msgstr ""
-#~ "Bonjour&nbsp;! Cet outil d&rsquo;import vous permet d&rsquo;extraire "
+#~ "Salutations&nbsp;! Cet outil d&rsquo;import vous permet d&rsquo;extraire "
 #~ "des articles depuis n&rsquo;importe quel fichier RSS 2.0 vers votre site. "
 #~ "Ceci est utile si vous souhaitez importer vos articles depuis un système "
 #~ "pour lequel il n&rsquo;existe pas d&rsquo;outil d&rsquo;import. "
@@ -13655,7 +13655,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgid ""
 #~ "Howdy! This imports tags from Simple Tagging 1.6.2 into WordPress tags."
 #~ msgstr ""
-#~ "Bonjour&nbsp;! Cet outil importe dans ce blog les mots-clefs en "
+#~ "Salutations&nbsp;! Cet outil importe dans ce blog les mots-clefs en "
 #~ "provenance d&rsquo;une installation existante de Simple Tagging 1.6.2, "
 #~ "dans les mots-clefs WordPress."
 #~ msgid ""
@@ -13724,7 +13724,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Howdy! This imports categories, users, posts, comments, and links from "
 #~ "any Textpattern 4.0.2+ into this site."
 #~ msgstr ""
-#~ "Bonjour&nbsp;! Cet outil importe les catégories, utilisateurs, "
+#~ "Salutations&nbsp;! Cet outil importe les catégories, utilisateurs, "
 #~ "articles, commentaires et liens de n&rsquo;importe quelle installation "
 #~ "Textpattern 4.0.2+ dans ce site."
 #~ msgid ""
@@ -13810,7 +13810,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgid ""
 #~ "Howdy! This imports tags from Ultimate Tag Warrior 3 into WordPress tags."
 #~ msgstr ""
-#~ "Bonjour&nbsp;! Cet outil importe dans ce site les mots-clefs en "
+#~ "Salutations&nbsp;! Cet outil importe dans ce site les mots-clefs en "
 #~ "provenance d&rsquo;une installation existante d&rsquo;Ultimate Tag "
 #~ "Warrior 3, dans les mots-clefs WordPress."
 #~ msgid ""
@@ -13872,7 +13872,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "import the posts, pages, comments, custom fields, categories, and tags "
 #~ "into this site."
 #~ msgstr ""
-#~ "Bonjour&nbsp;! Mettez en ligne votre fichier WordPress eXtended RSS "
+#~ "Salutations&nbsp;! Mettez en ligne votre fichier WordPress eXtended RSS "
 #~ "(WXR), et nous importerons vos articles, pages, commentaires, champs "
 #~ "personnalisés, catégories et mots-clefs dans ce site."
 #~ msgid ""
@@ -13946,7 +13946,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "To get started, check the categories you wish to be converted, then click "
 #~ "the Convert button."
 #~ msgstr ""
-#~ "Bonjour&nbsp;! Ce convertisseur vous permet de sélectionner les "
+#~ "Salutations&nbsp;! Ce convertisseur vous permet de sélectionner les "
 #~ "catégories existantes à convertir en mots-clefs. Pour vous lancer, cochez "
 #~ "les cases correspondant aux catégories que vous souhaitez convertir, puis "
 #~ "cliquez sur le bouton Convertir."
@@ -14959,7 +14959,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgstr "Mettre à jour WordPress"
 #~ msgid "Hi %s! You're logged in as a network administrator."
 #~ msgstr ""
-#~ "Bonjour %s&nbsp;! Vous êtes connecté comme administrateur du réseau."
+#~ "Salutations %s&nbsp;! Vous êtes connecté comme administrateur du réseau."
 #~ msgid "<strong><em>Note that password</em></strong> carefully!"
 #~ msgstr ""
 #~ "<strong><em>Notez bien ce mot de passe</em></strong> sans vous "
@@ -15666,7 +15666,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Howdy! This imports tags from Bunny&#8217;s Technorati Tags into "
 #~ "WordPress tags."
 #~ msgstr ""
-#~ "Bonjour&nbsp;! Cet outil importe dans ce blog les mots-clefs en "
+#~ "Salutations&nbsp;! Cet outil importe dans ce blog les mots-clefs en "
 #~ "provenance d&rsquo;une installation existante de Bunny&rsquo;s "
 #~ "Technorati, dans les mots-clefs WordPress."
 
@@ -15707,7 +15707,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgid ""
 #~ "Howdy! This imports tags from Jerome&#8217;s Keywords into WordPress tags."
 #~ msgstr ""
-#~ "Bonjour&nbsp;! Cet outil importe dans ce blog les mots-clefs en "
+#~ "Salutations&nbsp;! Cet outil importe dans ce blog les mots-clefs en "
 #~ "provenance d&rsquo;une installation existante de Jerome&rsquo;s Keywords, "
 #~ "dans les tags WordPress."
 

@@ -4,8 +4,8 @@
      * @subpackage Toolbox
      */
 ?>
-CONTENT.PHP
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+<address id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
         <h1 class="entry-title">
             <a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink to %s', 'toolbox'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a>
@@ -28,6 +28,13 @@ CONTENT.PHP
         <?php the_content(__('Continue reading <span class="meta-nav">&rarr;</span>', 'toolbox')); ?>
         <?php wp_link_pages(array('before' => '<div class="page-link">' . __('Pages:', 'toolbox'),
                                   'after'  => '</div>')); ?>
+        <?php
+        $custom_fields = get_post_custom();
+        echo $custom_fields['Adresse'][0];
+        echo $custom_fields['CP'][0];
+        echo $custom_fields['email'][0];
+        echo $custom_fields['fax'][0];
+        ?>
     </div><!-- .entry-content -->
     <?php endif; ?>
 
@@ -64,4 +71,4 @@ CONTENT.PHP
         <?php edit_post_link(__('Edit', 'toolbox'), '<span class="edit-link">', '</span>'); ?>
     </footer>
     <!-- #entry-meta -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</address><!-- #post-<?php the_ID(); ?> -->

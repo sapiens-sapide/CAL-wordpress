@@ -8,9 +8,10 @@
      */
 
     get_header(); ?>
-<nav class="leftNav">
-    <?php wp_nav_menu( array( 'theme_location' => 'leftNav-actualites' ) ); ?>
-</nav>
+CATEGORY.PHP
+
+<?php CAL_get_leftNav(); ?>
+
 <section id="primary">
     <div id="content" role="main">
 
@@ -18,15 +19,14 @@
 
         <header class="page-header">
             <h1 class="page-title"><?php
-                printf(__('Category Archives: %s', 'toolbox'), '<span>' . single_cat_title('', false) . '</span>');
+                //printf(__('Category Archives: %s', 'toolbox'), '<span>' . single_cat_title('', false) . '</span>');
                 ?></h1>
 
             <?php
             $category_description = category_description();
-            if (!empty($category_description))
-                    {
-                        echo apply_filters('category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>');
-                    }
+            if (!empty($category_description)) {
+                echo apply_filters('category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>');
+            }
             ?>
         </header>
 
@@ -68,5 +68,5 @@
     <!-- #content -->
 </section><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php CAL_get_sidebar(); ?>
 <?php get_footer(); ?>

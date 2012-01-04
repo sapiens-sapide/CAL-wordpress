@@ -1,25 +1,68 @@
 /*custom*/
 
-.leftNav {display: block; position: relative; float: left; left: 10px; width: 190px;}
+body {
+    font : 10px "Courier New", Courier, mono;
+}
 
-.blocHome, .blocActu {display: block; float: left; width: 220px;}
+.leftNav {
+    display  : block;
+    position : relative;
+    float    : left;
+    left     : 10px;
+    width    : 190px;
+}
 
-.blocActu {height: 400px; margin-left: 50px;}
+.blocHome, .blocActu {
+    display : block;
+    float   : left;
+    width   : 220px;
+}
 
-.sectionActu {display: block; width: 280px;}
+.blocActu {
+    height      : 400px;
+    margin-left : 50px;
+}
 
-.titreArchive {font-weight: bold; font-size: 20px;}
+.sectionActu {
+    display : block;
+    width   : 280px;
+}
 
-article .page {width: 700px; padding: 0;}
-/*article .singular.page .hentry {padding: 0.5em 0 0;}*/
+.titreArchive {
+    font-weight : bold;
+    font-size   : 20px;
+}
 
-#searchBox { display: inline-block; width: 250px; position: relative; left: 700px;}
+article .page {
+    width   : 700px;
+    padding : 0;
+}
 
-.home h2 { font-size: 1.17em; font-weight: bold;}
+#searchBox {
+    display  : inline-block;
+    width    : 250px;
+    position : relative;
+    left     : 800px;
+    top      : -10px;
+}
 
-.mentions { display: inline-block; margin-right: 150px;}
+.home h2 {
+    font-size   : 1.17em;
+    font-weight : bold;
+}
 
-.CAL_sidebar { width: 250px; float: right; display: block; position: relative;}
+.mentions {
+    display      : inline-block;
+    margin-right : 150px;
+}
+
+.CAL_sidebar {
+    width       : 250px;
+    float       : left;
+    display     : block;
+    position    : relative;
+    margin-left : 50px;
+}
 
 /***************************************/
 
@@ -27,24 +70,76 @@ article .page {width: 700px; padding: 0;}
 
 /***************************************/
 
-#access {background: none repeat scroll 0 0 transparent; box-shadow: none; clear: both; display: block; height: 150px; left: 500px; margin: 0; overflow: hidden; position: absolute; top: 30px; width: 400px; padding: 0;}
+#access {
+    background : none repeat scroll 0 0 transparent;
+    box-shadow : none;
+    clear      : both;
+    display    : block;
+    height     : 150px;
+    left       : 500px;
+    margin     : 0;
+    overflow   : hidden;
+    position   : absolute;
+    top        : 30px;
+    width      : 400px;
+    padding    : 0;
+}
 
-#access div {margin: 0;}
+#access div {
+    margin : 0;
+}
 
-.menu-menu-principal-container {height: 150px; width: 400px;}
+.menu-menu-principal-container {
+    height : 150px;
+    width  : 400px;
+}
 
-#access a {color: black; display: block; line-height: 3.333em; padding: 0 0.9em; text-decoration: none;}
+#access a {
+    color           : black;
+    display         : block;
+    line-height     : 3.333em;
+    padding         : 0 0.9em;
+    text-decoration : none;
+}
 
-#access li {float: left; height: 30px; position: relative; width: 190px;}
+#access li {
+    float    : left;
+    height   : 30px;
+    position : relative;
+    width    : 140px;
+}
 
-#access li:hover > a, #access a:focus {background: silver repeat scroll 0 0; color: #373737;}
+#access li:hover > a, #access a:focus {
+    background : silver repeat scroll 0 0;
+    color      : #373737;
+}
 
-#searchform input#s {width: 50%;}
+#searchform input#s {
+    width : 50%;
+}
 
-#content { margin: 0;}
+#content {
+    margin : 0;
+}
 
-#primary {float: left; margin: 0 0 0 30px; width: 500px;}
+#primary {
+    float  : left;
+    margin : 0 0 0 30px;
+    width  : 500px;
+}
 
-#main .widget-area {float: left; margin-left: 50px; overflow: hidden; width: 220px;}
+#main .widget-area {
+    float       : left;
+    margin-left : 50px;
+    overflow    : hidden;
+    width       : 220px;
+}
 
-.current_page_item { font-weight: bold; text-decoration: underline;}
+.current_page_item {
+    font-weight     : bold;
+    text-decoration : underline;
+}
+
+.widgettitle {
+    display : none;
+}

@@ -1,31 +1,35 @@
 <?php
-/**
- * The Template for displaying all single posts.
- *
- * @package WordPress
- * @subpackage Toolbox
- * @since Toolbox 0.1
- */
+    /**
+     * The Template for displaying all single posts.
+     *
+     * @package WordPress
+     * @subpackage Toolbox
+     * @since Toolbox 0.1
+     */
 
-get_header(); ?>
+    get_header(); ?>
+SINGLE.PHP
 
-		<div id="primary">
-			<div id="content" role="main">
+<?php CAL_get_leftNav(); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+<div id="primary">
+    <div id="content" role="main">
 
-				<?php toolbox_content_nav( 'nav-above' ); ?>
+        <?php while (have_posts()) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'single' ); ?>
+        <?php //toolbox_content_nav( 'nav-above' ); ?>
 
-				<?php toolbox_content_nav( 'nav-below' ); ?>
+        <?php get_template_part('content', 'single'); ?>
 
-				<?php comments_template( '', true ); ?>
+        <?php //toolbox_content_nav( 'nav-below' ); ?>
 
-			<?php endwhile; // end of the loop. ?>
+        <?php comments_template('', true); ?>
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
+        <?php endwhile; // end of the loop. ?>
 
-<?php get_sidebar(); ?>
+    </div>
+    <!-- #content -->
+</div><!-- #primary -->
+<?php toolbox_content_nav('nav-below'); ?>
+<?php CAL_get_sidebar(); ?>
 <?php get_footer(); ?>

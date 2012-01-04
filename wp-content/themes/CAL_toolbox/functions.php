@@ -176,9 +176,18 @@
             'after_title'   => '</h1>',
         ));
         register_sidebar(array(
-            'name'          => __('Sidebar domaines et avocats', 'toolbox'),
+            'name'          => __('Sidebar domaines', 'toolbox'),
             'id'            => 'CALside-8',
-            'description'   => __('colonne de droit sur les pages domaines intervention et présentation des avocats', 'toolbox'),
+            'description'   => __('colonne de droite sur la page domaines intervention', 'toolbox'),
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget'  => "</aside>",
+            'before_title'  => '<h1 class="widget-title">',
+            'after_title'   => '</h1>',
+        ));
+        register_sidebar(array(
+            'name'          => __('Sidebar le cabinet', 'toolbox'),
+            'id'            => 'CALside-9',
+            'description'   => __('colonne de droite sur les pages Cabinet', 'toolbox'),
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget'  => "</aside>",
             'before_title'  => '<h1 class="widget-title">',
@@ -286,7 +295,7 @@
                     </article>
                     <!-- #comment-## -->
 
-                <?php
+                    <?php
                 break;
         endswitch;
     }
@@ -400,42 +409,72 @@
 
     function CAL_get_leftNav ()
     {
-        ?><nav class="leftNav">
-            <?php
-                if (is_page(array(107,105))) :
-                    wp_nav_menu( array( 'theme_location' => 'leftNav-prestations' ) );
-                elseif (is_page(52)):
-                    wp_nav_menu( array( 'theme_location' => 'leftNav-actualites' ) );
-                elseif (is_page(29)):
-                    wp_nav_menu( array( 'theme_location' => 'leftNav-clients' ) );
-                elseif (is_page(array(23,25,27))):
-                    wp_nav_menu( array( 'theme_location' => 'leftNav-cabinet' ) );
-                elseif (is_page(array(31,93,35,33))):
-                    wp_nav_menu( array( 'theme_location' => 'leftNav-ressources' ) );
-                endif;
         ?>
+        <nav class="leftNav">
+            <?php
+            if (is_page(array(107, 105))) :
+                wp_nav_menu(array('theme_location' => 'leftNav-prestations'));
+            elseif (is_home() || is_category() || is_single()):
+                wp_nav_menu(array('theme_location' => 'leftNav-actualites'));
+            elseif (is_page(array(29, 113, 115, 163, 165))):
+                wp_nav_menu(array('theme_location' => 'leftNav-clients'));
+            elseif (is_page(array(23, 25, 27, 142, 144, 146, 151))):
+                wp_nav_menu(array('theme_location' => 'leftNav-cabinet'));
+            elseif (is_page(array(31, 93, 35, 33, 92))):
+                wp_nav_menu(array('theme_location' => 'leftNav-ressources'));
+            endif;
+            ?>
         </nav>
-        <?php
+    <?php
     }
 
     function CAL_get_sidebar ()
     {
-        if (is_page(array(107,105,25))):
-           get_sidebar('CALside-8');
-        elseif (is_page(00)):
-           // get_sidebar('sidebar-7');
-        elseif (is_page(00)):
-           // get_sidebar('sidebar-7');
-        elseif (is_page(00)):
-           // get_sidebar('sidebar-7');
-        elseif (is_page(00)):
-           // get_sidebar('sidebar-7');
-        elseif (is_page(array(93,29))):
-           get_sidebar('CALside-4');
+        if (is_page(array(107, 105))):
+            get_sidebar('CALside-8');
+        elseif (is_page(array(23, 25, 142, 144, 146))):
+            get_sidebar('CALside-9');
+        elseif (is_page(151)):
+            get_sidebar('CALside-5');
+        elseif (is_page(array(93, 29, 113, 115, 163, 165))):
+            get_sidebar('CALside-4');
+        elseif (is_home() || is_category() || is_single()):
+            get_sidebar('CALside-1');
         endif;
     }
 
+    //// Custom Post Type registration (copy & past from admin field) ////////
+    function create_post_type ()
+    {
+        register_post_type('publications', array('label'           => 'Publications',
+                                                 'description'     => 'ouvrages publiés par les associés',
+                                                 'public'          => true,
+                                                 'show_ui'         => true,
+                                                 'show_in_menu'    => true,
+                                                 'capability_type' => 'post',
+                                                 'hierarchical'    => false,
+                                                 'rewrite'         => array('slug' => ''),
+                                                 'query_var'       => true,
+                                                 'supports'        => array('title', 'editor', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'thumbnail', 'author', 'page-attributes',),
+                                                 'labels'          => array(
+                                                     'name'               => 'Publications',
+                                                     'singular_name'      => 'Publication',
+                                                     'menu_name'          => 'Publications',
+                                                     'add_new'            => 'Add Publication',
+                                                     'add_new_item'       => 'Add New Publication',
+                                                     'edit'               => 'Edit',
+                                                     'edit_item'          => 'Edit Publication',
+                                                     'new_item'           => 'New Publication',
+                                                     'view'               => 'View Publication',
+                                                     'view_item'          => 'View Publication',
+                                                     'search_items'       => 'Search Publications',
+                                                     'not_found'          => 'No Publications Found',
+                                                     'not_found_in_trash' => 'No Publications Found in Trash',
+                                                     'parent'             => 'Parent Publication',
+                                                 ),));
+    }
 
+    add_action('init', 'create_post_type');
     /**
      * This theme was built with PHP, Semantic HTML, CSS, love, and a Toolbox.
      */

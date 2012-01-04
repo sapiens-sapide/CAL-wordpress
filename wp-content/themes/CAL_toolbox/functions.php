@@ -414,8 +414,12 @@
             <?php
             if (is_page(array(107, 105))) :
                 wp_nav_menu(array('theme_location' => 'leftNav-prestations'));
-            elseif (is_home() || is_category() || is_single() || is_tag()):
-                wp_nav_menu(array('theme_location' => 'leftNav-actualites'));
+            elseif (!is_page()):
+                if (is_category(28)):
+                    wp_nav_menu(array('theme_location' => 'leftNav-ressources'));
+                else:
+                    wp_nav_menu(array('theme_location' => 'leftNav-actualites'));
+                endif;
             elseif (is_page(array(29, 113, 115, 163, 165))):
                 wp_nav_menu(array('theme_location' => 'leftNav-clients'));
             elseif (is_page(array(23, 25, 27, 142, 144, 146, 151))):
@@ -431,7 +435,11 @@
     function CAL_get_sidebar ()
     {
         if (!is_page()): //is_home() || is_category() || is_single() || is_tag()
-            get_sidebar('CALside-1');
+            if (is_category(28)):
+                get_sidebar('CALside-6');
+            else:
+                get_sidebar('CALside-1');
+            endif;
         elseif (is_page(array(107, 105))):
             get_sidebar('CALside-8');
         elseif (is_page(array(23, 25, 142, 144, 146))):

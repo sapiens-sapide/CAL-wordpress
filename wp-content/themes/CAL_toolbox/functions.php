@@ -415,7 +415,7 @@
             if (is_page(array(107, 105))) :
                 wp_nav_menu(array('theme_location' => 'leftNav-prestations'));
             elseif (!is_page()):
-                if (is_category(array(28, 30)) || is_post_type_archive('livre', 'lettreInfo')):
+                if (is_category(array(28, 30)) || is_post_type_archive(array('livre', 'lettreinformation'))):
                     wp_nav_menu(array('theme_location' => 'leftNav-ressources'));
                 else:
                     wp_nav_menu(array('theme_location' => 'leftNav-actualites'));
@@ -435,12 +435,12 @@
     function CAL_get_sidebar ()
     {
         if (!is_page()): //is_home() || is_category() || is_single() || is_tag()
-            if (is_category(array(28, 30)) || is_post_type_archive('livre', 'lettreInfo')):
+            if (is_category(array(28, 30)) || is_post_type_archive(array('livre', 'lettreinformation'))):
                 get_sidebar('CALside-6');
             else:
                 get_sidebar('CALside-1');
             endif;
-        elseif (is_page(array(107, 105))):
+    elseif (is_page(array(107, 105))):
             get_sidebar('CALside-8');
         elseif (is_page(array(23, 25, 142, 144, 146))):
             get_sidebar('CALside-9');
@@ -455,16 +455,15 @@
 
     //// Custom columns for Post Type livres  ////////
     add_action("manage_posts_custom_column", "livres_columns");
-    add_filter("manage_edit-Livre_columns", "my_livres_columns");
+    add_filter("manage_edit-livre_columns", "my_livres_columns");
 
     function my_livres_columns ($columns)
     {
         unset($columns['author']);
         $columns = array_merge($columns, array(
-            "auteur"    => __("Auteur(s)"),
-            "editeur"   => __("Éditeur"),
-            "edition"   => __("Édition"),
-            "millesime" => __("Millésime"),
+            "auteursLivre"    => __("Auteur(s)"),
+            "editeur"         => __("Éditeur"),
+            "millesime"       => __("Millésime"),
         ));
         return $columns;
     }
@@ -476,11 +475,14 @@
 
         switch ($column)
         {
-            case 'auteur':
-                echo get_post_meta($post->ID, 'Auteur', true);
+            case 'auteursLivre':
+                echo get_post_meta($post->ID, 'auteursLivre', true);
                 break;
             case 'millesime':
                 echo get_post_meta($post->ID, 'millesime', true);
+                break;
+            case 'editeur';
+                echo get_post_meta($post->ID, 'editeur', true);
                 break;
         }
     }

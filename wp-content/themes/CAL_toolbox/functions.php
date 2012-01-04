@@ -473,7 +473,7 @@
     {
         unset($columns['author']);
         $columns = array_merge($columns, array(
-            "moisParutionLettreInfo"    => __("Mois de parution")
+            "moisParutionLettreInfo"    => __("Date de parution")
         ));
         return $columns;
     }

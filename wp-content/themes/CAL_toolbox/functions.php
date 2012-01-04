@@ -459,14 +459,13 @@
 
     function my_livres_columns ($columns)
     {
-        $columns = array(
-            "titre"     => "Titre",
-            "auteur"    => "Auteur(s)",
-            "editeur"   => "Éditeur",
-            "edition"   => "Édition",
-            "millesime" => "Millésime",
-            "lienAchat" => "Liens achat en ligne"
-        );
+        unset($columns['author']);
+        $columns = array_merge($columns, array(
+            "auteur"    => __("Auteur(s)"),
+            "editeur"   => __("Éditeur"),
+            "edition"   => __("Édition"),
+            "millesime" => __("Millésime"),
+        ));
         return $columns;
     }
 
@@ -477,19 +476,8 @@
 
         switch ($column)
         {
-            case 'titre':
-                echo $post->ID;
-                break;
             case 'auteur':
-                $terms = get_the_term_list($post->ID, 'book_author', '', ',', '');
-                if (is_string($terms)) {
-                    echo $terms;
-                }
-                else
-                {
-                    echo 'Unable to get author(s)';
-                }
-
+                echo get_post_meta($post->ID, 'Auteur', true);
                 break;
             case 'millesime':
                 echo get_post_meta($post->ID, 'millesime', true);

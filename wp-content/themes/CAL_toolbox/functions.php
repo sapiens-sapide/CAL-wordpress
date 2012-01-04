@@ -455,7 +455,7 @@
 
     //// Custom columns for Post Type livres  ////////
     add_action("manage_posts_custom_column", "livres_columns");
-    add_filter("manage_edit-livres_columns", "my_livres_columns");
+    add_filter("manage_edit-Livre_columns", "my_livres_columns");
 
     function my_livres_columns ($columns)
     {

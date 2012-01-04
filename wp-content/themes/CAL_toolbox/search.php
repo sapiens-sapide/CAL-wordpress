@@ -7,7 +7,9 @@
      * @since Toolbox 0.1
      */
 
-    get_header(); ?>
+    get_header();
+    CAL_get_leftNav();
+?>
 SEARCH.PHP
 <section id="primary">
     <div id="content" role="main">

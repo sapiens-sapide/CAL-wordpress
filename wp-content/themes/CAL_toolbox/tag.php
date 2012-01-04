@@ -7,7 +7,9 @@
      * @since Toolbox 0.1
      */
 
-    get_header(); ?>
+    get_header();
+    CAL_get_leftNav();
+?>
 TAG.PHP
 <section id="primary">
     <div id="content" role="main">
@@ -16,15 +18,14 @@ TAG.PHP
 
         <header class="page-header">
             <h1 class="page-title"><?php
-                printf(__('Tag Archives: %s', 'toolbox'), '<span>' . single_tag_title('', false) . '</span>');
+                // printf(__('Tag Archives: %s', 'toolbox'), '<span>' . single_tag_title('', false) . '</span>');
                 ?></h1>
 
             <?php
             $tag_description = tag_description();
-            if (!empty($tag_description))
-                    {
-                        echo apply_filters('tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>');
-                    }
+            if (!empty($tag_description)) {
+                echo apply_filters('tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>');
+            }
             ?>
         </header>
 
@@ -68,5 +69,5 @@ TAG.PHP
     <!-- #content -->
 </section><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php CAL_get_sidebar(); ?>
 <?php get_footer(); ?>

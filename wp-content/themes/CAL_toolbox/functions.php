@@ -414,13 +414,13 @@
             <?php
             if (is_page(array(107, 105))) :
                 wp_nav_menu(array('theme_location' => 'leftNav-prestations'));
-            elseif (is_home() || is_category() || is_single()):
+            elseif (is_home() || is_category() || is_single() || is_tag()):
                 wp_nav_menu(array('theme_location' => 'leftNav-actualites'));
             elseif (is_page(array(29, 113, 115, 163, 165))):
                 wp_nav_menu(array('theme_location' => 'leftNav-clients'));
             elseif (is_page(array(23, 25, 27, 142, 144, 146, 151))):
                 wp_nav_menu(array('theme_location' => 'leftNav-cabinet'));
-            elseif (is_page(array(31, 93, 35, 33, 92))):
+            elseif (is_page(array(192, 93, 177))):
                 wp_nav_menu(array('theme_location' => 'leftNav-ressources'));
             endif;
             ?>
@@ -430,51 +430,48 @@
 
     function CAL_get_sidebar ()
     {
-        if (is_page(array(107, 105))):
+        if (!is_page()): //is_home() || is_category() || is_single() || is_tag()
+            get_sidebar('CALside-1');
+        elseif (is_page(array(107, 105))):
             get_sidebar('CALside-8');
         elseif (is_page(array(23, 25, 142, 144, 146))):
             get_sidebar('CALside-9');
         elseif (is_page(151)):
             get_sidebar('CALside-5');
-        elseif (is_page(array(93, 29, 113, 115, 163, 165))):
+        elseif (is_page(array(29, 113, 115, 163, 165))):
             get_sidebar('CALside-4');
-        elseif (is_home() || is_category() || is_single()):
-            get_sidebar('CALside-1');
+        elseif (array(192, 93, 177)):
+            get_sidebar('CALside-6');
         endif;
     }
 
     //// Custom Post Type registration (copy & past from admin field) ////////
-    function create_post_type ()
+    /*function create_post_type ()
     {
-        register_post_type('publications', array('label'           => 'Publications',
-                                                 'description'     => 'ouvrages publiés par les associés',
-                                                 'public'          => true,
-                                                 'show_ui'         => true,
-                                                 'show_in_menu'    => true,
-                                                 'capability_type' => 'post',
-                                                 'hierarchical'    => false,
-                                                 'rewrite'         => array('slug' => ''),
-                                                 'query_var'       => true,
-                                                 'supports'        => array('title', 'editor', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'thumbnail', 'author', 'page-attributes',),
-                                                 'labels'          => array(
-                                                     'name'               => 'Publications',
-                                                     'singular_name'      => 'Publication',
-                                                     'menu_name'          => 'Publications',
-                                                     'add_new'            => 'Add Publication',
-                                                     'add_new_item'       => 'Add New Publication',
-                                                     'edit'               => 'Edit',
-                                                     'edit_item'          => 'Edit Publication',
-                                                     'new_item'           => 'New Publication',
-                                                     'view'               => 'View Publication',
-                                                     'view_item'          => 'View Publication',
-                                                     'search_items'       => 'Search Publications',
-                                                     'not_found'          => 'No Publications Found',
-                                                     'not_found_in_trash' => 'No Publications Found in Trash',
-                                                     'parent'             => 'Parent Publication',
-                                                 ),));
+        register_post_type('publications', array(	'label' => 'Publications','description' => 'ouvrages publiés par les associés','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => ''),'query_var' => true,'supports' => array('title','editor','excerpt','trackbacks','custom-fields','comments','revisions','thumbnail','author','page-attributes',),'taxonomies' => array('types-publications',),'labels' => array (
+          'name' => 'Publications',
+          'singular_name' => 'Publication',
+          'menu_name' => 'Publications',
+          'add_new' => 'Ajouter',
+          'add_new_item' => 'Ajouter une Publication',
+          'edit' => 'Éditer',
+          'edit_item' => 'Éditer publication',
+          'new_item' => 'Nouvelle Publication',
+          'view' => 'Voir',
+          'view_item' => 'Voir Publication',
+          'search_items' => 'Chercher publication',
+          'not_found' => 'No Publications Found',
+          'not_found_in_trash' => 'No Publications Found in Trash',
+          'parent' => 'Parent Publication',
+        ),) );
+        /*register_taxonomy('types-publications',array (
+          0 => 'publications',
+        ),array( 'hierarchical' => false, 'label' => 'Types de Publications','show_ui' => true,'query_var' => true,'rewrite' => array('slug' => ''),'singular_label' => 'Type de Publication') );
     }
 
-    add_action('init', 'create_post_type');
+    add_action('init', 'create_post_type');*/
+
+
     /**
      * This theme was built with PHP, Semantic HTML, CSS, love, and a Toolbox.
      */

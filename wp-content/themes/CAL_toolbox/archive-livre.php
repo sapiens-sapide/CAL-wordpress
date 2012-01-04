@@ -13,7 +13,7 @@
      */
 
     get_header(); ?>
-ARCHIVE-LIVRES.PHP
+ARCHIVE-LIVRE.PHP
 <nav class="leftNav">
     <?php wp_nav_menu(array('theme_location' => 'leftNav-actualites')); ?>
 </nav>
@@ -51,7 +51,7 @@ ARCHIVE-LIVRES.PHP
                             * If you want to overload this in a child theme then include a file
                             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                             */
-            get_template_part('content', get_post_format());
+            get_template_part('content-livre', get_post_format());
             ?>
 
             <?php endwhile; ?>

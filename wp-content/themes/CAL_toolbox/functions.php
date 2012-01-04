@@ -440,7 +440,7 @@
             else:
                 get_sidebar('CALside-1');
             endif;
-    elseif (is_page(array(107, 105))):
+        elseif (is_page(array(107, 105))):
             get_sidebar('CALside-8');
         elseif (is_page(array(23, 25, 142, 144, 146))):
             get_sidebar('CALside-9');
@@ -453,9 +453,10 @@
         endif;
     }
 
-    //// Custom columns for Post Type livres  ////////
-    add_action("manage_posts_custom_column", "livres_columns");
+    //// Custom columns for Post Type  ////////
+    add_action("manage_posts_custom_column", "my_columns");
     add_filter("manage_edit-livre_columns", "my_livres_columns");
+    add_filter("manage_edit-lettreinformation_columns", "lettreinformation_columns");
 
     function my_livres_columns ($columns)
     {
@@ -468,7 +469,16 @@
         return $columns;
     }
 
-    function livres_columns ($column)
+    function lettreinformation_columns ($columns)
+    {
+        unset($columns['author']);
+        $columns = array_merge($columns, array(
+            "moisParutionLettreInfo"    => __("Mois de parution")
+        ));
+        return $columns;
+    }
+
+    function my_columns ($column)
     {
 
         global $post;
@@ -481,8 +491,11 @@
             case 'millesime':
                 echo get_post_meta($post->ID, 'millesime', true);
                 break;
-            case 'editeur';
+            case 'editeur':
                 echo get_post_meta($post->ID, 'editeur', true);
+                break;
+            case 'moisParutionLettreInfo':
+                echo get_post_meta($post->ID, 'moisParutionLettreInfo', true);
                 break;
         }
     }

@@ -453,31 +453,49 @@
         endif;
     }
 
-    //// Custom Post Type registration (copy & past from admin field) ////////
-    /*function create_post_type ()
+    //// Custom columns for Post Type livres  ////////
+    add_action("manage_posts_custom_column", "livres_columns");
+    add_filter("manage_edit-livres_columns", "my_livres_columns");
+
+    function my_livres_columns ($columns)
     {
-        register_post_type('publications', array(	'label' => 'Publications','description' => 'ouvrages publiés par les associés','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => ''),'query_var' => true,'supports' => array('title','editor','excerpt','trackbacks','custom-fields','comments','revisions','thumbnail','author','page-attributes',),'taxonomies' => array('types-publications',),'labels' => array (
-          'name' => 'Publications',
-          'singular_name' => 'Publication',
-          'menu_name' => 'Publications',
-          'add_new' => 'Ajouter',
-          'add_new_item' => 'Ajouter une Publication',
-          'edit' => 'Éditer',
-          'edit_item' => 'Éditer publication',
-          'new_item' => 'Nouvelle Publication',
-          'view' => 'Voir',
-          'view_item' => 'Voir Publication',
-          'search_items' => 'Chercher publication',
-          'not_found' => 'No Publications Found',
-          'not_found_in_trash' => 'No Publications Found in Trash',
-          'parent' => 'Parent Publication',
-        ),) );
-        /*register_taxonomy('types-publications',array (
-          0 => 'publications',
-        ),array( 'hierarchical' => false, 'label' => 'Types de Publications','show_ui' => true,'query_var' => true,'rewrite' => array('slug' => ''),'singular_label' => 'Type de Publication') );
+        $columns = array(
+            "titre"     => "Titre",
+            "auteur"    => "Auteur(s)",
+            "editeur"   => "Éditeur",
+            "edition"   => "Édition",
+            "millesime" => "Millésime",
+            "lienAchat" => "Liens achat en ligne"
+        );
+        return $columns;
     }
 
-    add_action('init', 'create_post_type');*/
+    function livres_columns ($column)
+    {
+
+        global $post;
+
+        switch ($column)
+        {
+            case 'titre':
+                echo $post->ID;
+                break;
+            case 'auteur':
+                $terms = get_the_term_list($post->ID, 'book_author', '', ',', '');
+                if (is_string($terms)) {
+                    echo $terms;
+                }
+                else
+                {
+                    echo 'Unable to get author(s)';
+                }
+
+                break;
+            case 'millesime':
+                echo get_post_meta($post->ID, 'millesime', true);
+                break;
+        }
+    }
 
 
     /**
